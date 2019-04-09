@@ -9,53 +9,75 @@
 </head>
 
 <body>
+       
+        <div class="resultado">
+                <div class="" id="velha">
+                    
+                </div>
+                <div class="" id="bola"></div>
+                <div class="" id="xis"></div>
+            </div>
     <div id="inicio">
-        <article class="movimento" onclick="ClickX()" id="Xizinho">
-            <img src="XIS.png" class="escolha" >
-            <h1>Pontos: 0</h1>
-        </article>
+        <div class="movimento" onclick="ClickX()" id="Xizinho">
+            <img src="XIS.png" class="escolha">
+            <h1>
+                <center id="PX">0</center>
+            </h1>
+        </div>
     </div>
     <div id="inicio">
-            <article class="movimento" onclick="ClickY()" id="Bolinha">
-                <img src="Bola.png" class="escolha" >
-                <h1>Pontos: 0</h1>
-            </article>
+        <div class="movimento" onclick="ClickY()" id="Bolinha">
+            <img src="Bola.png" class="escolha">
+            <h1>
+                <center id="PO">0</center>
+            </h1>
         </div>
-    <section class="horizontal" id="linha1">
-        <article id="01" class="movimento" onclick="Click01()">
-            <img src=Branco.png id="img01" class="imagem">
-        </article>
-        <article id="02" class="movimento" onclick="Click02()">
-            <img src=Branco.png id="img02" class="imagem">
-        </article>
-        <article id="03" class="movimento" onclick="Click03()">
-            <img src=Branco.png id="img03" class="imagem">
-        </article>
+    </div>
+    <div id="newG">
+        <a onclick="NewGame()" class="New">Novo Jogo</a>
+    </div>
+    
+    <div class="todas">
+        <div class="horizontal" id="linha1">
+            <div id="00" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img00" class="imagem">
+            </div>
+            <div id="01" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img01" class="imagem">
+            </div>
+            <div id="02" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img02" class="imagem">
+            </div>
 
-    </section>
+        </div>
 
-    <section class="horizontal" id="linha2">
-        <article id="04" class="movimento" onclick="Click04()">
-            <img src=Branco.png id="img04" class="imagem">
-        </article>
-        <article id="05" class="movimento" onclick="Click05()">
-            <img src=Branco.png id="img05" class="imagem">
-        </article>
-        <article id="06" class="movimento" onclick="Click06()">
-            <img src=Branco.png id="img06" class="imagem">
-        </article>
-    </section>
-    <section class="horizontal" id="linha3">
-        <article id="07" class="movimento" onclick="Click07()">
-            <img src=Branco.png id="img07" class="imagem">
-        </article>
-        <article id="08" class="movimento" onclick="Click08()">
-            <img src=Branco.png id="img08" class="imagem">
-        </article>
-        <article id="09" class="movimento" onclick="Click09()">
-            <img src=Branco.png id="img09" class="imagem">
-        </article>
-    </section>
+        <div class="horizontal" id="linha2">
+            <div id="10" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img10" class="imagem">
+            </div>
+            <div id="11" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img11" class="imagem">
+            </div>
+            <div id="12" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img12" class="imagem">
+            </div>
+        </div>
+        <div class="horizontal" id="linha3">
+            <div id="20" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img20" class="imagem">
+            </div>
+            <div id="21" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img21" class="imagem">
+            </div>
+            <div id="22" class="movimento" onclick="ClickE(this)">
+                <img src=Branco.png id="img22" class="imagem">
+            </div>
+        </div>
+        
+    </div>
+    
+   
+   
 
 </body>
 
