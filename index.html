@@ -9,13 +9,15 @@
 </head>
 
 <body>
+    
        
-        <div class="resultado">
-                <div class="" id="velha">
+        <div class="resultado" id="res">
+                <!-- <div class="" id="velha">
                     
                 </div>
                 <div class="" id="bola"></div>
-                <div class="" id="xis"></div>
+                <div class="" id="xis"></div> -->
+
             </div>
     <div id="inicio">
         <div class="movimento" onclick="ClickX()" id="Xizinho">
@@ -34,10 +36,14 @@
         </div>
     </div>
     <div id="newG">
-        <a onclick="NewGame()" class="New">Novo Jogo</a>
+        <a onclick="NewGame()" class="New" id="btn"><center>Novo Jogo</center></a>
+        <div id="newJ">
+        <a onclick="Recomeco()" class="New"><center>Zerar Placar</center></a>
+    </div>
     </div>
     
-    <div class="todas">
+    
+    <div id="todas">
         <div class="horizontal" id="linha1">
             <div id="00" class="movimento" onclick="ClickE(this)">
                 <img src=Branco.png id="img00" class="imagem">
@@ -75,7 +81,9 @@
         </div>
         
     </div>
-    
+    <div id="newGV">
+            <a onclick="NewGame()" class="New" id="btnV">Novo Jogo</a>
+        </div>
    
    
 
