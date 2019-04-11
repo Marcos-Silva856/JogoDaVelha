@@ -7,6 +7,9 @@ var contx = 0;
 var conto = 0;
 var fim = false;
 var velha;
+var colorX = false;
+var colorY = false;
+
 for (var i = 0; i < 3; i++) {
     jogo[i] = [];
 }
@@ -17,10 +20,15 @@ for (var i = 0; i < 3; i++) {
 }
 function ClickX() {
     if (bool == false) {
-        document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
+        document.getElementById('Xizinho').style.backgroundColor = '#212121';
+        document.getElementById('EscX').src = 'XISFoco.png';
         document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
+        document.getElementById('EscO').src = 'Bola.png';
         vez = "X";
+        colorX = true;
+        colorY = false;
         return vez;
+
     }
 
 
@@ -28,8 +36,12 @@ function ClickX() {
 function ClickY() {
     if (bool == false) {
         vez = "O";
-        document.getElementById('Bolinha').style.backgroundColor = '#E0E0E0';
+        document.getElementById('Bolinha').style.backgroundColor = '#212121';
+        document.getElementById('EscO').src = 'BolaFoco.png';
         document.getElementById('Xizinho').style.backgroundColor = '#BDBDBD';
+        document.getElementById('EscX').src = 'XIS.png';
+        colorY = true;
+        colorX = false;
         return vez;
     }
 }
@@ -40,13 +52,14 @@ function vencedor() {
         if ((jogo[0][i] != "A") && (jogo[0][i] == jogo[1][i]) && (jogo[2][i] == jogo[1][i]) && (fim == false)) {
             if (jogo[0][i] == "X") {
                 for (var j = 0; j < 3; j++) {
-                    document.getElementById('A'+j.toString() + i.toString()).style.backgroundColor = '#E0E0E0';
+                    document.getElementById('A' + j.toString() + i.toString()).style.backgroundColor = '#E0E0E0';
                 }
                 contx = contx + 1;
                 document.getElementById('PX').innerHTML = contx;
                 fim = true;
-                document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
-                document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
+                // document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
+                document.getElementById('Bolinha').style.backgroundColor = '#212121';
+                document.getElementById('EscO').src = 'BolaFoco.png';
                 document.getElementById('res').style.display = 'block';
                 document.getElementById('res').style.backgroundImage = "url('XVence.png')";
                 document.getElementById('res').style.backgroundRepeat = "no-repeat";
@@ -56,7 +69,7 @@ function vencedor() {
 
             } else if (jogo[0][i] == "O") {
                 for (var j = 0; j < 3; j++) {
-                    document.getElementById('A'+j.toString() + i.toString()).style.backgroundColor = '#E0E0E0';
+                    document.getElementById('A' + j.toString() + i.toString()).style.backgroundColor = '#E0E0E0';
                 }
                 conto = conto + 1;
                 document.getElementById('PO').innerHTML = conto;
@@ -74,13 +87,14 @@ function vencedor() {
         } else if ((jogo[i][0] != "A") && (jogo[i][0] == jogo[i][1]) && (jogo[i][2] == jogo[i][1]) && (fim == false)) {
             if (jogo[i][0] == "X") {
                 for (var j = 0; j < 3; j++) {
-                    document.getElementById('A'+i.toString() + j.toString()).style.backgroundColor = '#E0E0E0';
+                    document.getElementById('A' + i.toString() + j.toString()).style.backgroundColor = '#E0E0E0';
                 }
                 contx = contx + 1;
                 document.getElementById('PX').innerHTML = contx;
                 fim = true;
                 document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
-                document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
+                document.getElementById('Bolinha').style.backgroundColor = '#212121';
+                document.getElementById('EscO').src = 'BolaFoco.png';
                 document.getElementById('res').style.display = 'block';
                 document.getElementById('res').style.backgroundImage = "url('XVence.png')";
                 document.getElementById('res').style.backgroundRepeat = "no-repeat";
@@ -91,7 +105,7 @@ function vencedor() {
 
             } else if (jogo[i][0] == "O") {
                 for (var j = 0; j < 3; j++) {
-                    document.getElementById('A'+i.toString() + j.toString()).style.backgroundColor = '#E0E0E0';
+                    document.getElementById('A' + i.toString() + j.toString()).style.backgroundColor = '#E0E0E0';
                 }
                 conto = conto + 1;
                 document.getElementById('PO').innerHTML = conto;
@@ -118,7 +132,8 @@ function vencedor() {
             document.getElementById('PX').innerHTML = contx;
             fim = true;
             document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
-            document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
+            document.getElementById('Bolinha').style.backgroundColor = '#212121';
+            document.getElementById('EscO').src = 'BolaFoco.png';
             document.getElementById('res').style.display = 'block';
             document.getElementById('res').style.backgroundImage = "url('XVence.png')";
             document.getElementById('res').style.backgroundRepeat = "no-repeat";
@@ -153,7 +168,8 @@ function vencedor() {
             document.getElementById('PX').innerHTML = contx;
             fim = true;
             document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
-            document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
+            document.getElementById('Bolinha').style.backgroundColor = '#212121';
+            document.getElementById('EscO').src = 'BolaFoco.png';
             document.getElementById('res').style.display = 'block';
             document.getElementById('res').style.backgroundImage = "url('XVence.png')";
             document.getElementById('res').style.backgroundRepeat = "no-repeat";
@@ -204,6 +220,8 @@ function vencedor() {
 function ClickE(n1) {
     var mat = (n1.id).toString();
     if (fim == false) {
+        colorX = true;
+        colorY = true;
         if (jogo[mat[1]][mat[2]] == "A") {
             img = document.getElementById('img' + n1.id);
             if (vez == "X") {
@@ -219,14 +237,15 @@ function ClickE(n1) {
                 img.src = "Bola.png"
                 vez = 'X';
                 document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
-                document.getElementById('Xizinho').style.backgroundColor = '#E0E0E0';
-            }else if(vez=="nada"){
+                document.getElementById('Bolinha').style.backgroundColor = '#212121';
+                document.getElementById('EscO').src = 'BolaFoco.png';
+            } else if (vez == "nada") {
                 document.getElementById('Trat').style.display = 'block';
-        document.getElementById('Trat').style.backgroundImage = "url('Tratamento.png')";
-        document.getElementById('Trat').style.backgroundRepeat = "no-repeat";
-        document.getElementById('Trat').style.backgroundPosition = "center";
-        document.getElementById('newG').style.display = 'none';
-        document.getElementById('newT').style.display = 'block';
+                document.getElementById('Trat').style.backgroundImage = "url('Tratamento.png')";
+                document.getElementById('Trat').style.backgroundRepeat = "no-repeat";
+                document.getElementById('Trat').style.backgroundPosition = "center";
+                document.getElementById('newG').style.display = 'none';
+                document.getElementById('newT').style.display = 'block';
 
             }
         }
@@ -237,10 +256,10 @@ function NewGame() {
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             jogo[i][j] = "A";
-            img = 'A'+i.toString() + j.toString();
+            img = 'A' + i.toString() + j.toString();
             img = document.getElementById('img' + img);
             img.src = "Branco.png";
-            document.getElementById('A'+j.toString() + i.toString()).style.backgroundColor = '#BDBDBD';
+            document.getElementById('A' + j.toString() + i.toString()).style.backgroundColor = '#BDBDBD';
             document.getElementById('Trat').style.display = 'none';
             document.getElementById('newT').style.display = 'none';
         }
@@ -253,11 +272,43 @@ function NewGame() {
     document.getElementById('res').style.display = 'none';
     document.getElementById('newG').style.display = 'block';
     document.getElementById('newGV').style.display = 'none';
+    document.getElementById('EscO').src = 'Bola.png';
+    document.getElementById('EscX').src = 'XIS.png';
 }
-function Recomeco(){
+function Recomeco() {
     NewGame()
-    conto=0;
-    contx=0;
+    conto = 0;
+    contx = 0;
     document.getElementById('PO').innerHTML = conto;
     document.getElementById('PX').innerHTML = contx;
+}
+function Foco(Localizar) {
+    if (colorX == false) {
+        if (Localizar.id == "Xizinho") {
+            document.getElementById('Xizinho').style.backgroundColor = '#212121';
+            document.getElementById('EscX').src = 'XISFoco.png';
+        }
+    }
+    if (colorY == false) {
+        if (Localizar.id == "Bolinha") {
+            document.getElementById('Bolinha').style.backgroundColor = '#212121';
+            document.getElementById('EscO').src = 'BolaFoco.png';
+        }
+    }
+
+
+}
+function NoFoco(Local) {
+    if (colorX == false) {
+        if (Local.id == "Xizinho") {
+            document.getElementById('Xizinho').style.backgroundColor = '#BDBDBD';
+            document.getElementById('EscX').src = 'XIS.png';
+        }
+    } if (colorY == false) {
+        if (Local.id == "Bolinha") {
+            document.getElementById('Bolinha').style.backgroundColor = '#BDBDBD';
+            document.getElementById('EscO').src = 'Bola.png';
+
+        }
+    }
 }
