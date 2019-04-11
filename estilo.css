@@ -5,33 +5,51 @@ border: 0px;
 border-spacing: 0px;
 }
 body{
-    background-color: aquamarine;
+    background-color: #BDBDBD;
 }
 .horizontal{
 
-    width: 35%;
-    height: 35%;
+    width: 30%;
+    height: 25%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
-    background-color: black;
     
+}
+#A00, #A01, #A02, #A10, #A11, #A12, #A20, #A21, #A22{
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-left-width: 5px;
+}
+#A01, #A02, #A00{
+    border-top-style:  none;
+}
+#A20, #A21, #A22{
+    border-bottom-style:  none;
+}
+#A02, #A12, #A22{
+    border-right-style:  none;
+}
+#A00, #A10, #A20{
+    border-left-style:  none;
 }
 .movimento{
     height: 150px;
     width: 150px;
-    box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.24);
-    background: aquamarine;
-    margin: 5px;
+    background: #BDBDBD;
     position: relative;
     cursor: pointer;
+
 }
 .imagem{
     height: 90%;
     width: 90%;
 }
 .escolha{
+    
     height: 90%;
     width: 90%;
     border-style: solid;
@@ -49,39 +67,41 @@ body{
 #newG{
     float: right;
     margin-top: 6%;
-    margin-right: 13%;
+    margin-right: 19%;
     position: relative;
     z-index:2;
 }
+#newT {
+    margin-top: -9%;
+    margin-right: 47%;
+    position: relative;
+    z-index: 2;
+    float: right;
+    display: none;
+}
 .New {
-	-moz-box-shadow: 0px 0px 13px -1px #276873;
-	-webkit-box-shadow: 0px 0px 13px -1px #276873;
-	box-shadow: 0px 0px 13px -1px #276873;
-	background-color:#3ab4e0;
-	-moz-border-radius:40px;
-	-webkit-border-radius:40px;
-	border-radius:40px;
-	border:3px solid #29668f;
+	background-color:#BDBDBD;
+	border:10px solid #000;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Verdana;
-	font-size:17px;
+	color:#000;
+	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size:25px;
 	padding:16px 31px;
 	text-decoration:none;
-    text-shadow:0px 0px 5px #3d768a;
     width: 80%;
     height: 80%; 
 }
 .New:hover {
-	background-color:#5be6f0;
+    background-color:#212121;
+    color: #eee;
 }
 .New:active {
 	position:relative;
 	top:1px;
 }
 .resultado{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     position:absolute;
     display: none;
     height: 100%;
@@ -89,18 +109,28 @@ body{
     z-index: 1;
     margin-top: -20px;
 }
+.Tratamento{
+    background-color: #BDBDBD;
+    position:absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    margin-top: -20px;  
+}
 #todas{
     margin-top: 20px;
     margin-left: 20px;
     z-index: 0;
 }
 #newGV{
-    margin-bottom: 4%;
-    margin-right: 45%;
-    position: relative;
+    margin-bottom: 0px;
+    position: absolute;
     z-index:2;
     float: right;
     display: none;
+    margin-left: 42%;
+    margin-top: 2%;
 }
 #newJ{
     margin-top: 10%;
