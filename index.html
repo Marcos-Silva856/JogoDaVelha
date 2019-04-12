@@ -5,6 +5,7 @@
     <title>Jogo da velha</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="estilo.css">
+    <link rel="icon" type="imagem/png" href="logo-smn.png" />
     <script type="text/javascript" src="Java.js"></script>
 </head>
 
@@ -18,16 +19,16 @@
 
     </div>
     <div id="inicio">
-        <div class="movimento" onclick="ClickX()" id="Xizinho">
-            <img src="XIS.png" class="escolha">
+        <div class="movimento" onclick=ClickX() onmouseover=Foco(this) onmouseout=NoFoco(this) onmouseup=MouseUp(this) onmousedown=MouseDown(this) id="Xizinho">
+            <img src="XIS.png" class="escolha" id="EscX">
             <h1>
                 <center id="PX">0</center>
             </h1>
         </div>
     </div>
     <div id="inicio">
-        <div class="movimento" onclick="ClickY()" id="Bolinha">
-            <img src="Bola.png" class="escolha">
+        <div class="movimento" onclick="ClickY()" onmouseover=Foco(this) onmouseout=NoFoco(this) onmouseup=MouseUp(this) onmousedown=MouseDown(this) id="Bolinha">
+            <img src="Bola.png" class="escolha" id="EscO">
             <h1>
                 <center id="PO">0</center>
             </h1>
